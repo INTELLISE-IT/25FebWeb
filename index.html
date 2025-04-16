@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restrictions on inputs</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+        div {
+            background-color: bisque;
+            width: 75%;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>User Input</h1>
+        <h2>Types of input elements</h2>
+        <h3>Attributes to apply restrictions on user input</h3>
+        <form action="StudReg.php" autocomplete="off" id="StudRegister">
+            <input type="text" name="sName" id="sName" placeholder="Your Full Name">
+            <label for="institute1">Institute Name : <input type="text" name="institute1" 
+                id="institute1" value="INTELLISE IT Coding Institute"></label><br><br>
+            <label for="institute2">Institute Name : <input type="text" name="institute2" 
+                id="institute2" value="INTELLISE IT Coding Institute" disabled></label><br><br>
+            <label for="institute3">Institute Name : <input type="text" name="institute3"
+                id="institute3" value="INTELLISE IT Coding Institute" readonly></label><br><br>
+            <label for="rn">Roll No : <input type="number" name="rn" id="rn" min="101" max="999" required></label>
+            <label for="marks">Marks :
+                <input type="number" name="marks" id="marks" min="0" max="100" step="5"></label><br><br>
+            <label for="userN">Username : 
+                <input type="text" name="userName" id="userN" maxlength="15" pattern="[a-zA-Z]+" 
+                size="40" required autocomplete="on" autofocus>
+                <span style="color: red;">Enter only letters, from a-z, or A-Z.</span></label><br><br>
+            <label for="mobNo">Mobile No : 
+                <input type="text" name="mobNo" id="mobNo" pattern="[6-9][0-9]{9}">
+                <span style="color: red;">Enter 10 digit mobile no, starting with either 6, 7, 8 or 9</span>
+            </label><br><br>
+            <input type="submit" value="Register"><br><br>
+            <input type="submit" value="Sign Up" formaction="studSignUp.php" formmethod="post" formtarget="_blank"><br><br>
+            <input type="submit" value="Login" formaction="studLogin.php" formenctype="multipart/form-data">
+        </form>
+        <br><br>
+<label for="userN">Username : <input type="text" name="userN" id="userN" form="StudRegister">
+    <span style="color: red;">Enter letters only, from a-z or A-Z.</span></label>
+</body>
+</html>
